@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SocialMediaForStudents.Data;
 
 namespace SocialMediaForStudents.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201105171149_EntitiesCreated")]
+    partial class EntitiesCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,7 +277,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("PostId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.Group", b =>
@@ -311,7 +313,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Group");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.Post", b =>
@@ -346,7 +348,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Post");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.Setting", b =>
@@ -434,7 +436,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("TownId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Student");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.StudentGroup", b =>
@@ -463,7 +465,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("StudentGroups");
+                    b.ToTable("StudentGroup");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.StudentSubject", b =>
@@ -492,7 +494,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("StudentSubjects");
+                    b.ToTable("StudentSubject");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.StudentTeacher", b =>
@@ -521,7 +523,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("StudentTeachers");
+                    b.ToTable("StudentTeacher");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.StudentTest", b =>
@@ -553,7 +555,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("TestId");
 
-                    b.ToTable("StudentTests");
+                    b.ToTable("StudentTest");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.Subject", b =>
@@ -588,7 +590,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subject");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.Teacher", b =>
@@ -639,7 +641,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("TownId");
 
-                    b.ToTable("Teachers");
+                    b.ToTable("Teacher");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.Test", b =>
@@ -675,7 +677,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("Tests");
+                    b.ToTable("Test");
                 });
 
             modelBuilder.Entity("SocialMediaForStudents.Data.Models.Town", b =>
@@ -706,7 +708,7 @@ namespace SocialMediaForStudents.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Towns");
+                    b.ToTable("Town");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -24,6 +24,30 @@
         {
         }
 
+        public DbSet<Town> Towns { get; set; }
+
+        public DbSet<Student> Students { get; set; }
+
+        public DbSet<Subject> Subjects { get; set; }
+
+        public DbSet<StudentSubject> StudentSubjects { get; set; }
+
+        public DbSet<Teacher> Teachers { get; set; }
+
+        public DbSet<StudentTeacher> StudentTeachers { get; set; }
+
+        public DbSet<Test> Tests { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
+
+        public DbSet<Group> Groups { get; set; }
+
+        public DbSet<StudentGroup> StudentGroups { get; set; }
+
+        public DbSet<StudentTest> StudentTests { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
+
         public DbSet<Setting> Settings { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
@@ -47,6 +71,18 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<StudentSubject>()
+                .HasKey(e => new { e.StudentId, e.SubjectId });
+
+            builder.Entity<StudentTeacher>()
+                .HasKey(e => new { e.StudentId, e.TeacherId });
+
+            builder.Entity<StudentTest>()
+                .HasKey(e => new { e.StudentId, e.TestId });
+
+            builder.Entity<StudentGroup>()
+                .HasKey(e => new { e.StudentId, e.GroupId });
+
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
 
