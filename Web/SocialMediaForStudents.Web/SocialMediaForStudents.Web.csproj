@@ -44,4 +44,15 @@
     <ProjectReference Include="..\SocialMediaForStudents.Web.Infrastructure\SocialMediaForStudents.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\SocialMediaForStudents.Web.ViewModels\SocialMediaForStudents.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Client\src\app\components\" />
+    <Folder Include="Client\src\app\core\guards\" />
+    <Folder Include="Client\src\app\core\interceptors\" />
+    <Folder Include="Client\src\app\core\services\" />
+    <Folder Include="Client\src\app\core\resolvers\" />
+    <Folder Include="Client\src\app\shared\footer\" />
+    <Folder Include="Client\src\app\shared\nav-bar\" />
+    <Folder Include="Client\src\app\shared\models\" />
+  </ItemGroup>
 </Project>
