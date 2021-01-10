@@ -1,24 +1,26 @@
 ﻿namespace SocialMediaForStudents.Web.Controllers
 {
-    using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Identity.UI.V3.Pages.Account.Internal;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Logging;
-    using SocialMediaForStudents.Data.Models;
-    using System.Diagnostics;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
-    public class HomeController : ApiController
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Identity.UI.V3.Pages.Account.Internal;
+    using Microsoft.Extensions.Logging;
+    using SocialMediaForStudents.Common;
+    using SocialMediaForStudents.Data.Models;
+
+    [Authorize(Roles = GlobalConstants.Roles.UserRoleName)]
+    public abstract class UserController : ApiController
     {
-        public HomeController(
+        protected UserController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<LogoutModel> logger)
             : base(userManager, signInManager, logger)
         {
         }
-
-        [HttpGet]
-        public ActionResult Index() => this.Ok();
     }
 }
