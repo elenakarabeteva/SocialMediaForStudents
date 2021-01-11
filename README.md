@@ -1,1 +1,1 @@
-# SocialMediaForStudents
+# (SSM) Students Social Media
